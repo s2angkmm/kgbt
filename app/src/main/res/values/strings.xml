@@ -3,4 +3,9 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="Intro_Enhanced">Enhanced</string>
+    <string name="Intro_Portable">Portable Aisg</string>
+    <string name="Intro_Controller">Controller</string>
+    <string name="Intro_kgt">Kgp Tech Corp</string>
+    <string name="Intro_ver">Ver.:1.00</string>
 </resources>
