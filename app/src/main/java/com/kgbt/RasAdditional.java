@@ -3,55 +3,53 @@ package com.kgbt;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.os.Handler;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.TextView;
 
-public class MainActivity extends Activity {
+import java.util.ArrayList;
 
-    Handler h;
+public class RasAdditional extends Activity {
+
+    ArrayList<String> arrayList;
+    private int    uiOption = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
-        toggleHideyBar();
+        setContentView(R.layout.activity_ras_additional);
 
-        h = new Handler();
-        h.postDelayed(mrun, 1500);
+        arrayList = new ArrayList<String>();
+        for(int i=0; i<5; i++){
+            arrayList.add(String.valueOf(i));
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, arrayList);
 
-        Intent i = new Intent(getApplicationContext(), MyService.class);
-        startService(i);
-
+        Spinner sp = (Spinner)findViewById(R.id.spinner_RasNo);
+        sp.setAdapter(adapter);
     }
 
-    Runnable mrun = new Runnable() {
-        @Override
-        public void run() {
-            Intent i = new Intent(MainActivity.this, MenuActivity.class);
-            startActivity(i);
-            finish();
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-        }
-    };
-
     @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
-            if (!hasFocus) {
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_BACK:
                 toggleHideyBar();
-            }
+                return true;
         }
+        return super.onKeyDown(keyCode, event);
     }
     public void toggleHideyBar() {
         int uiOptions = this.getWindow().getDecorView().getSystemUiVisibility();
-        int newUiOptions = uiOptions;
+        int newUiOptions = uiOption = uiOptions;
         boolean isImmersiveModeEnabled =
                 ((uiOptions | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) == uiOptions);
         // Navigation bar hiding:  Backwards compatible to ICS.
@@ -66,13 +64,36 @@ public class MainActivity extends Activity {
             newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         }
         this.getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
+
         //END_INCLUDE (set_ui_flags)
     }
+    Button.OnClickListener mClickListener = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            Intent i;
+
+            TextView tv = (TextView)findViewById(R.id.information_flg);
+            switch (v.getId()){
+                case R.id.btn_addinfo:
+
+                    finish();
+                    break;
+                case R.id.btn_TmaManage:
+                    Log.d("DEG", "mClickListener__menu2");
+
+                    i = new Intent(RasAdditional.this, RasManagement.class);
+                    startActivity(i);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    finish();
+                    break;
+            }
+        }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_ras_additional, menu);
         return true;
     }
 

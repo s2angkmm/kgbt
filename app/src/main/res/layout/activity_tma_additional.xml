@@ -1,0 +1,529 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context="com.kgbt.TmaAdditional">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:id="@+id/linearLayout2">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:background="@android:drawable/ic_media_next" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView3"
+            android:background="@android:drawable/checkbox_off_background" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView4"
+            android:background="@android:drawable/stat_sys_data_bluetooth" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView5"
+            android:background="@android:drawable/ic_lock_idle_low_battery" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="TMA > ADDITIONAL INFORMATION"
+        android:id="@+id/tv_title_MultiInfomation"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:minHeight="30dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/linearLayout3">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button"
+                android:id="@+id/button7"
+                android:layout_weight="1" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button"
+                android:id="@+id/button8"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="MANAGE"
+                android:id="@+id/btn_TmaManage" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/tv_title_MultiInfomation"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/linearLayout3" >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:orientation="vertical"
+            android:id="@+id/tableLayout"
+            android:layout_below="@+id/tv_title_MultiInfomation"
+            android:layout_above="@+id/linearLayout3">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:baselineAligned="false"
+                android:layout_marginBottom="15dp">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sub Unit No."
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <Spinner
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/spinner_TmaSubUnitNo"
+                    android:layout_weight="3"/>
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ANT Modle"
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:id="@+id/editText_TmaTmaModel"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ANT S/N"
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:id="@+id/editText_TmaSn"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ANT Freq."
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:id="@+id/editText_TmaFreq"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ANT B/W"
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:id="@+id/editText_Tmabw"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ANT Gain"
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:id="@+id/editText_TmaGain"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tilt Range"
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:id="@+id/editText_TmaTiltRange"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Install Date"
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:id="@+id/editText_TmaInstallDate"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Installer"
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:id="@+id/editText_TmaInstaller"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="BTS ID"
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:id="@+id/editText_TmaBtsId"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sector ID"
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:id="@+id/editText_TmaSectorId"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bearing"
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/editText_TmaBearing"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imgbtn_TmaBearing"
+                    android:layout_weight="0.1"
+                    android:foreground="@android:drawable/btn_star_big_on"
+                    android:background="@mipmap/ic_launcher" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mech. Angle"
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/editText_TmaMechAngle"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imgbtn_TmaAngle"
+                    android:layout_weight="0.1"
+                    android:foreground="@android:drawable/btn_star_big_on"
+                    android:background="@mipmap/ic_launcher" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tma Type"
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:id="@+id/editText_TmaType"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rx Freq."
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:id="@+id/editText_TmaRxFreq"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tx Freq."
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:id="@+id/editText_TmaTxFreq"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gain Range"
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:id="@+id/editText_TmaGainRange"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gain Resol"
+                    android:id="@+id/button6"
+                    style="@style/button_text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="-10dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:id="@+id/editText_TmaGainResol"
+                    android:layout_margin="10dp"
+                    android:focusable="@bool/abc_action_bar_embed_tabs_pre_jb" />
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

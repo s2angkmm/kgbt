@@ -8,4 +8,20 @@
     <string name="Intro_Controller">Controller</string>
     <string name="Intro_kgt">Kgp Tech Corp</string>
     <string name="Intro_ver">Ver.:1.00</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="Single_ret_information">INFORMATION</string>
+
+    <string name="title_activity_aldinfomation">ALD INFOMATION</string>
+    <string name="title_activity_ald">ald</string>
+    <string name="title_activity_single_ret_information">Information</string>
+    <string name="title_activity_sertinformation">Sertinformation</string>
+    <string name="title_activity_addinformation">addinformation</string>
+    <string name="title_activity_management">Management</string>
+    <string name="title_activity_multi_ret_infomation">MultiRetInfomation</string>
+    <string name="title_activity_multi_ret_additional">MultiRetAdditional</string>
+    <string name="title_activity_multi_ret_information">MultiRetInformation</string>
+    <string name="title_activity_tma_additional">TmaAdditional</string>
+    <string name="title_activity_tma_management">TmaManagement</string>
+    <string name="title_activity_ras_additional">RasAdditional</string>
+    <string name="title_activity_ras_management">RasManagement</string>
 </resources>

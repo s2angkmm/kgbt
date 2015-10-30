@@ -4,54 +4,69 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageButton;
 
-public class MainActivity extends Activity {
+public class addinformation extends Activity {
 
-    Handler h;
+    private int    uiOption = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_addinformation);
         toggleHideyBar();
 
-        h = new Handler();
-        h.postDelayed(mrun, 1500);
+        ImageButton imgbtn_bearing = (ImageButton)findViewById(R.id.imgbtn_bearing);
+        imgbtn_bearing.setOnClickListener(mClickListener);
 
-        Intent i = new Intent(getApplicationContext(), MyService.class);
-        startService(i);
+        ImageButton imgbtn_angle = (ImageButton)findViewById(R.id.imgbtn_angle);
+        imgbtn_angle.setOnClickListener(mClickListener);
 
     }
 
-    Runnable mrun = new Runnable() {
+    Button.OnClickListener mClickListener = new View.OnClickListener(){
         @Override
-        public void run() {
-            Intent i = new Intent(MainActivity.this, MenuActivity.class);
-            startActivity(i);
-            finish();
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        public void onClick(View v) {
+            Intent i;
+            Log.d("DEG", "mClickListener");
+            switch (v.getId()){
+                case R.id.imgbtn_bearing:
+                    i = new Intent(addinformation.this, Management.class);
+                    startActivity(i);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    finish();
+                    break;
+                case R.id.imgbtn_angle:
+                    i = new Intent(addinformation.this, MenuActivity.class);
+                    startActivity(i);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    finish();
+                    break;
+
+            }
         }
     };
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
-            if (!hasFocus) {
-                toggleHideyBar();
-            }
+        // TODO Auto-generated method stub
+        // super.onWindowFocusChanged(hasFocus);
+        if( hasFocus ) {
+            toggleHideyBar();
         }
     }
     public void toggleHideyBar() {
         int uiOptions = this.getWindow().getDecorView().getSystemUiVisibility();
-        int newUiOptions = uiOptions;
+        int newUiOptions = uiOption = uiOptions;
         boolean isImmersiveModeEnabled =
                 ((uiOptions | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) == uiOptions);
         // Navigation bar hiding:  Backwards compatible to ICS.
@@ -66,13 +81,14 @@ public class MainActivity extends Activity {
             newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         }
         this.getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
+
         //END_INCLUDE (set_ui_flags)
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_addinformation, menu);
         return true;
     }
 

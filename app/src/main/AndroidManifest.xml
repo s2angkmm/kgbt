@@ -2,19 +2,89 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kgbt" >
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/NoTitle" >
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".AldInfomation"
+            android:label="@string/title_activity_aldinfomation"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Single_ret_information"
+            android:label="@string/title_activity_single_ret_information"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Sertinformation"
+            android:label="@string/title_activity_sertinformation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".addinformation"
+            android:label="@string/title_activity_addinformation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Management"
+            android:label="@string/title_activity_management"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".MultiRetAdditional"
+            android:label="@string/title_activity_multi_ret_additional"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".MultiRetInformation"
+            android:label="@string/title_activity_multi_ret_information" >
+        </activity>
+        <activity
+            android:name=".TmaAdditional"
+            android:label="@string/title_activity_tma_additional" >
+        </activity>
+        <activity
+            android:name=".TmaManagement"
+            android:label="@string/title_activity_tma_management" >
+        </activity>
+        <activity
+            android:name=".RasAdditional"
+            android:label="@string/title_activity_ras_additional" >
+        </activity>
+        <activity
+            android:name=".RasManagement"
+            android:label="@string/title_activity_ras_management" >
+        </activity>
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
     </application>
 
 </manifest>

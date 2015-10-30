@@ -1,57 +1,53 @@
 package com.kgbt;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Build;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.os.Handler;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
 
-public class MainActivity extends Activity {
+import java.util.ArrayList;
 
-    Handler h;
+public class MultiRetAdditional extends Activity {
+
+    ArrayList<String> arrayList;
+    private int    uiOption = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
-        toggleHideyBar();
+        setContentView(R.layout.activity_multi_ret_additional);
 
-        h = new Handler();
-        h.postDelayed(mrun, 1500);
+        arrayList = new ArrayList<String>();
+        for(int i=0; i<5; i++){
+            arrayList.add(String.valueOf(i));
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, arrayList);
 
-        Intent i = new Intent(getApplicationContext(), MyService.class);
-        startService(i);
+        Spinner sp = (Spinner)findViewById(R.id.spinner);
+        sp.setAdapter(adapter);
 
     }
 
-    Runnable mrun = new Runnable() {
-        @Override
-        public void run() {
-            Intent i = new Intent(MainActivity.this, MenuActivity.class);
-            startActivity(i);
-            finish();
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-        }
-    };
-
     @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
-            if (!hasFocus) {
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_BACK:
                 toggleHideyBar();
-            }
+                return true;
         }
+        return super.onKeyDown(keyCode, event);
     }
     public void toggleHideyBar() {
         int uiOptions = this.getWindow().getDecorView().getSystemUiVisibility();
-        int newUiOptions = uiOptions;
+        int newUiOptions = uiOption = uiOptions;
         boolean isImmersiveModeEnabled =
                 ((uiOptions | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) == uiOptions);
         // Navigation bar hiding:  Backwards compatible to ICS.
@@ -66,13 +62,13 @@ public class MainActivity extends Activity {
             newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         }
         this.getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
+
         //END_INCLUDE (set_ui_flags)
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_multi_ret_additional, menu);
         return true;
     }
 

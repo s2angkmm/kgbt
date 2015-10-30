@@ -1,53 +1,67 @@
 package com.kgbt;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.v4.widget.ListViewAutoScrollHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 
-public class MainActivity extends Activity {
+import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
-    Handler h;
+public class AldInfomation extends Activity {
+
+    private ListView lv = null;
+    private custom_aldinfo m_Adapter;
+
+    // 데이터를 연결할 Adapter
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_ald_infomation);
         toggleHideyBar();
 
-        h = new Handler();
-        h.postDelayed(mrun, 1500);
+        m_Adapter = new custom_aldinfo();
 
-        Intent i = new Intent(getApplicationContext(), MyService.class);
-        startService(i);
+        lv = (ListView)findViewById(R.id.listView);
+
+        lv.setAdapter(m_Adapter);
+
+        aldinfo aldinfo = new aldinfo();
+
+        for(int i=0; i< 3; i++) {
+
+            aldinfo.Mret = "MRET";
+            aldinfo.Ras = "RAS";
+            aldinfo.Sret = "SRET";
+            aldinfo.Tma = "TMA";
+            m_Adapter.add(aldinfo);
+        }
 
     }
 
-    Runnable mrun = new Runnable() {
-        @Override
-        public void run() {
-            Intent i = new Intent(MainActivity.this, MenuActivity.class);
-            startActivity(i);
-            finish();
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-        }
-    };
-
     @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
-            if (!hasFocus) {
-                toggleHideyBar();
-            }
-        }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_aldinfomation, menu);
+        return true;
     }
     public void toggleHideyBar() {
         int uiOptions = this.getWindow().getDecorView().getSystemUiVisibility();
@@ -68,14 +82,6 @@ public class MainActivity extends Activity {
         this.getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
         //END_INCLUDE (set_ui_flags)
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

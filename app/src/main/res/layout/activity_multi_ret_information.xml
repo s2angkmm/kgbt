@@ -1,0 +1,311 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.kgbt.MultiRetInformation">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:id="@+id/linearLayout2">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:background="@android:drawable/ic_media_next" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView3"
+            android:background="@android:drawable/checkbox_off_background" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView4"
+            android:background="@android:drawable/stat_sys_data_bluetooth" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView5"
+            android:background="@android:drawable/ic_lock_idle_low_battery" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Single_ret_information"
+        android:id="@+id/tv_title_MultiInfomation"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_centerHorizontal="true" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:minHeight="30dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/linearLayout3">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Add. Info"
+                android:id="@+id/btn_MultiAddinfo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button"
+                android:layout_weight="1"
+                android:id="@+id/button3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Manage"
+                android:id="@+id/btn_MultiInforationManage" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView3"
+        android:layout_below="@+id/tv_title_MultiInfomation"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/linearLayout3" >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    style="@style/button_text"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:text="Maker"
+                    android:gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+                <Button
+                    style="@style/button_Bg_white_Font_black"
+                    android:id="@+id/mult_maker"
+                    android:layout_weight="8"
+                    android:text="aaa"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="left" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    style="@style/button_text"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:text="Serial No."
+                    android:gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+                <Button
+                    style="@style/button_Bg_white_Font_black"
+                    android:id="@+id/mult_SerialNo"
+                    android:layout_weight="8"
+                    android:text="aaa"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="left" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    style="@style/button_text"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:text="Model"
+                    android:gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+                <Button
+                    style="@style/button_Bg_white_Font_black"
+                    android:id="@+id/mult_Model"
+                    android:layout_weight="8"
+                    android:text="aaa"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="left" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    style="@style/button_text"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:text="H/W Ver."
+                    android:gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+                <Button
+                    style="@style/button_Bg_white_Font_black"
+                    android:id="@+id/mult_HWver"
+                    android:layout_weight="8"
+                    android:text="aaa"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="left" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    style="@style/button_text"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:text="F/W Ver."
+                    android:gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+                <Button
+                    style="@style/button_Bg_white_Font_black"
+                    android:id="@+id/mult_FWver"
+                    android:layout_weight="8"
+                    android:text="aaa"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="left" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    style="@style/button_text"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:text="Protocol"
+                    android:gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+                <Button
+                    style="@style/button_Bg_white_Font_black"
+                    android:id="@+id/mult_Protocol"
+                    android:layout_weight="8"
+                    android:text="aaa"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="left" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    style="@style/button_text"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:text="COM Addr"
+                    android:gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+                <Button
+                    style="@style/button_Bg_white_Font_black"
+                    android:id="@+id/mult_COMAddr"
+                    android:layout_weight="8"
+                    android:text="aaa"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="left" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    style="@style/button_text"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:text="COM State"
+                    android:gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+                <Button
+                    style="@style/button_Bg_white_Font_black"
+                    android:id="@+id/mult_COMState"
+                    android:layout_weight="8"
+                    android:text="aaa"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="left" />
+            </TableRow>
+
+        </TableLayout>
+
+        </ScrollView>
+
+</RelativeLayout>

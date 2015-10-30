@@ -1,0 +1,160 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context="com.kgbt.MenuActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:baselineAligned="false"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView6"
+                    android:background="@drawable/abc_ic_ab_back_mtrl_am_alpha" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView7"
+                    android:background="@drawable/abc_ic_menu_paste_mtrl_am_alpha" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView2"
+                    android:background="@android:drawable/ic_media_next" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView3"
+                    android:background="@android:drawable/checkbox_off_background" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView4"
+                    android:background="@android:drawable/stat_sys_data_bluetooth" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView5"
+                    android:background="@android:drawable/ic_lock_idle_low_battery" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <ImageButton
+                    android:layout_width="fill_parent"
+                    android:layout_height="200dp"
+                    android:id="@+id/imb_menu1"
+                    android:layout_weight="0.5"
+                    android:layout_span="1"
+                    android:background="@android:color/holo_orange_dark"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:id="@+id/imb_menu2"
+                    android:layout_weight="0.5"
+                    android:layout_column="1"
+                    android:background="@android:color/holo_orange_dark"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:id="@+id/imb_menu3"
+                    android:layout_weight="0.5"
+                    android:layout_span="1"
+                    android:background="@android:color/holo_orange_dark"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:id="@+id/imb_menu4"
+                    android:layout_weight="0.5"
+                    android:layout_column="1"
+                    android:background="@android:color/holo_orange_dark"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:id="@+id/imb_menu5"
+                    android:layout_weight="0.5"
+                    android:layout_span="1"
+                    android:background="@android:color/holo_orange_dark"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:id="@+id/imb_menu6"
+                    android:layout_weight="0.5"
+                    android:layout_column="1"
+                    android:background="@android:color/holo_orange_dark"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+</RelativeLayout>
